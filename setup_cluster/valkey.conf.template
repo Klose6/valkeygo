@@ -1,0 +1,24 @@
+# Per-node Valkey server config. Template → <data-dir>/<port>/valkey.conf via create_valkey_cluster.sh.
+# Tokens @PORT@, @CLUSTER_HOST@, @PROTECTED_MODE@, @CLUSTER_NODE_TIMEOUT@ are substituted at start.
+
+dir ./
+
+port @PORT@
+bind @CLUSTER_HOST@
+protected-mode @PROTECTED_MODE@
+daemonize yes
+
+cluster-enabled yes
+cluster-config-file nodes.conf
+cluster-node-timeout @CLUSTER_NODE_TIMEOUT@
+
+appendonly yes
+appendfilename appendonly.aof
+appenddirname appendonlydir
+dbfilename dump.rdb
+
+logfile valkey.log
+
+enable-protected-configs yes
+enable-debug-command yes
+enable-module-command yes

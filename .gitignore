@@ -1,0 +1,4 @@
+notes/
+
+# Local Valkey cluster layout (see setup_cluster/cluster_config.sh, CLUSTER_DATA_DIR)
+setup_cluster/data/
