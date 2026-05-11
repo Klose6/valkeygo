@@ -1,0 +1,17 @@
+# Grafana Dashboard Provisioning
+# This file tells Grafana where to load dashboards from
+# 
+# Dashboards in the dashboards/ directory will be automatically loaded on startup
+
+apiVersion: 1
+
+providers:
+  - name: 'Valkey Dashboards'
+    orgId: 1
+    folder: ''
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards

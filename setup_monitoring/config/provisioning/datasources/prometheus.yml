@@ -1,0 +1,19 @@
+# Auto-provision Prometheus datasource in Grafana
+# This file is automatically loaded when Grafana starts
+# 
+# Prometheus Server Details:
+#   - URL: http://prometheus:9090 (internal Docker network)
+#   - Scrape Interval: 15s
+#   - Targets: Redis-exporters on ports 9200-9205
+
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+    jsonData:
+      timeInterval: 15s
