@@ -1,4 +1,4 @@
-Setup: local Valkey Cluster (six nodes — three primaries + three replicas)
+Setup: local Valkey Cluster from source code build (6 nodes — 3 primaries + 3 replicas)
 ==============================================================================
 
 Dependencies
