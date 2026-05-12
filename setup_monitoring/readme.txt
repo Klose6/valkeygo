@@ -114,3 +114,15 @@ This removes:
   - Valkey cluster data (./setup_cluster/data)
   - Monitoring config (./config)
   - All Docker containers (redis-exporters, prometheus, grafana)
+
+GENERATGE TRAFFIC
+-------
+./src/valkey-benchmark --cluster \
+  -h localhost \
+  -p 7000 \
+  -c 100 \
+  -n 1000000 \
+  -d 512 \
+  -t get,set \
+  -r 100000
+

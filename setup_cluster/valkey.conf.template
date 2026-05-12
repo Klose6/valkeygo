@@ -22,3 +22,6 @@ logfile valkey.log
 enable-protected-configs yes
 enable-debug-command yes
 enable-module-command yes
+
+maxmemory 512mb
+maxmemory-policy allkeys-lru
