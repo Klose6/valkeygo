@@ -117,12 +117,14 @@ This removes:
 
 GENERATGE TRAFFIC
 -------
-./src/valkey-benchmark --cluster \
-  -h localhost \
-  -p 7000 \
-  -c 100 \
-  -n 1000000 \
-  -d 512 \
-  -t get,set \
-  -r 100000
-
+memtier_benchmark \
+  --server=127.0.0.1 \
+  --port=7000 \
+  --cluster-mode \
+  --clients=100 \
+  --threads=4 \
+  --ratio=1:9 \
+  --pipeline=16 \
+  --data-size=512 \
+  --key-pattern=R:R \
+  --test-time=300
